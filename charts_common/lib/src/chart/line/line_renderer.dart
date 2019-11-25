@@ -969,10 +969,7 @@ class LineRenderer<D> extends BaseCartesianRenderer<D> {
       }
 
       if (config.includeLine) {
-        elements
-            .map<List<_AnimatedLine<D>>>(
-                (_AnimatedElements<D> animatingElement) =>
-                    animatingElement.lines)
+        elements.map<List<_AnimatedLine<D>>>((_AnimatedElements<D> animatingElement) => animatingElement.lines)
             .expand<_AnimatedLine<D>>((List<_AnimatedLine<D>> lines) => lines)
             .map<_LineRendererElement<D>>((_AnimatedLine<D> animatingLine) =>
                 animatingLine?.getCurrentLine(animationPercent))

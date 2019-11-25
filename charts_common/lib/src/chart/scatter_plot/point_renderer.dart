@@ -355,19 +355,19 @@ class PointRenderer<D> extends BaseCartesianRenderer<D> {
 
     seriesPointMap.forEach((String key, List<AnimatedPoint<D>> points) {
       points
-          .map<PointRendererElement<D>>((AnimatedPoint<D> animatingPoint) =>
-              animatingPoint.getCurrentPoint(animationPercent))
-          .forEach((PointRendererElement point) {
-        // Decorate the points with decorators that should appear below the main
-        // series data.
-        pointRendererDecorators
-            .where((PointRendererDecorator decorator) => !decorator.renderAbove)
-            .forEach((PointRendererDecorator decorator) {
-          decorator.decorate(point, canvas, graphicsFactory,
-              drawBounds: componentBounds,
-              animationPercent: animationPercent,
-              rtl: isRtl);
-        });
+          .map<PointRendererElement<D>>((AnimatedPoint<D> animatingPoint) {
+              final pointElement = animatingPoint.getCurrentPoint(animationPercent);
+
+              if (animatingPoint == points.last || animatingPoint == points.first) {
+                pointElement.fillColor = Color.transparent;
+                pointElement.color = Color.transparent;
+              }
+
+              return pointElement;
+            })
+          .forEach((PointRendererElement point) {pointRendererDecorators
+          .where((PointRendererDecorator decorator) => !decorator.renderAbove)
+          .forEach((PointRendererDecorator decorator) {decorator.decorate(point, canvas, graphicsFactory, drawBounds: componentBounds, animationPercent: animationPercent, rtl: isRtl);});
 
         // Skip points whose center lies outside the draw bounds. Those that lie
         // near the edge will be allowed to render partially outside. This
