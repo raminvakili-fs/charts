@@ -132,6 +132,7 @@ int i = 0;
     return charts.TimeSeriesChart(
       seriesData,
       animate: true,
+      animationDuration: Duration(milliseconds: 500),
       // domainAxis: charts.EndPointsTimeAxisSpec(),
       defaultRenderer: _lineRendererConfig,
       behaviors: [

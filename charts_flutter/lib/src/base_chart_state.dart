@@ -22,6 +22,7 @@ import 'package:flutter/material.dart'
         TickerProviderStateMixin,
         Widget;
 import 'package:charts_common/common.dart' as common;
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart'
     show Directionality, LayoutId, CustomMultiChildLayout;
 import 'behaviors/chart_behavior.dart'
@@ -37,6 +38,7 @@ class BaseChartState<D> extends State<BaseChart<D>>
     implements ChartState {
   // Animation
   AnimationController _animationController;
+  Animation _animation;
   double _animationValue = 0.0;
 
   Widget _oldWidget;
@@ -64,6 +66,11 @@ class BaseChartState<D> extends State<BaseChart<D>>
     super.initState();
     _animationController = new AnimationController(vsync: this)
       ..addListener(_animationTick);
+
+    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.bounceOut
+    ));
   }
 
   @override
@@ -154,12 +161,15 @@ class BaseChartState<D> extends State<BaseChart<D>>
   void _playAnimation(Duration duration) {
     _animationController.duration = duration;
     _animationController.forward(from: (duration == Duration.zero) ? 1.0 : 0.0);
-    _animationValue = _animationController.value;
+    //_animationValue = _animationController.value;
+    _animationValue = _animation.value;
+
   }
 
   void _animationTick() {
     setState(() {
-      _animationValue = _animationController.value;
+//      _animationValue = _animationController.value;
+      _animationValue = _animation.value;
     });
   }
 
