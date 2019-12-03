@@ -3,10 +3,13 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/charts_common/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/charts_common/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/charts_common/build" />
+      <excludeFolder url="file://$MODULE_DIR$/charts_flutter/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/charts_flutter/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/charts_flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/charts_flutter/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/charts_flutter/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/charts_flutter/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/charts_flutter/example/ios/Flutter/App.framework/flutter_assets/packages" />

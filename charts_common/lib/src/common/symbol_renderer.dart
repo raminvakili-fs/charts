@@ -16,6 +16,7 @@
 import 'dart:math' show Rectangle, Point, min;
 
 import 'package:meta/meta.dart' show protected;
+import 'package:vector_math/vector_math.dart';
 
 import '../chart/common/chart_canvas.dart' show ChartCanvas;
 import 'color.dart' show Color;
@@ -215,13 +216,21 @@ class CircleSymbolRenderer extends SymbolRenderer {
       bounds.top + (bounds.height / 2),
     );
     final radius = min(bounds.width, bounds.height) / 2;
+
     canvas.drawPoint(
         point: center,
         radius: radius,
         fill: getSolidFillColor(fillColor),
         stroke: strokeColor,
         strokeWidthPx: getSolidStrokeWidthPx(strokeWidthPx));
+
+
+
+
+    //TODO paint some custom rect for Flags
+
   }
+
 
   @override
   bool shouldRepaint(CircleSymbolRenderer oldRenderer) {

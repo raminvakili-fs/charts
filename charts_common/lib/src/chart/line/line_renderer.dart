@@ -18,6 +18,7 @@ import 'dart:math' show Rectangle, Point;
 
 import 'package:meta/meta.dart' show required, visibleForTesting;
 
+import '../../../common.dart';
 import '../../common/color.dart' show Color;
 import '../../common/math.dart' show clamp;
 import '../../data/series.dart' show AttributeKey;
@@ -80,7 +81,11 @@ class LineRenderer<D> extends BaseCartesianRenderer<D> {
             layoutPaintOrder: config.layoutPaintOrder,
             symbolRenderer: config.symbolRenderer) {
     _pointRenderer = new PointRenderer<D>(
-        config: new PointRendererConfig<D>(radiusPx: this.config.radiusPx));
+        config: new PointRendererConfig<D>(radiusPx: this.config.radiusPx, customSymbolRenderers: {
+          'circle': new CircleSymbolRenderer(),
+          'rect': new RectSymbolRenderer(),
+        }));
+
   }
 
   @override
