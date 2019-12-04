@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05257497-89a9-4af2-a7a7-9d2a1a04f78c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/charts_flutter/example/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/charts_flutter/example/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_flutter/example/lib/simple.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_flutter/example/lib/simple.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +21,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="367" column="21" lean-forward="true" selection-start-line="367" selection-start-column="21" selection-end-line="367" selection-end-column="21" />
+            <state relative-caret-position="507">
+              <caret line="396" column="44" selection-start-line="396" selection-start-column="44" selection-end-line="396" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="168" column="65" selection-start-line="168" selection-start-column="61" selection-end-line="168" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -28,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/comparison_points_decorator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
+            <state relative-caret-position="357">
               <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
             </state>
           </provider>
@@ -37,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2098">
-              <caret line="786" column="37" selection-start-line="786" selection-start-column="37" selection-end-line="786" selection-end-column="37" />
+            <state relative-caret-position="99">
+              <caret line="66" column="4" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
               <folding>
                 <element signature="e#645#689#0" expanded="true" />
               </folding>
@@ -80,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="534">
-              <caret line="258" column="26" lean-forward="true" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
+              <caret line="258" column="26" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
               <folding>
                 <element signature="e#645#691#0" expanded="true" />
               </folding>
@@ -102,15 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="344">
               <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/point_renderer.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="389" column="4" selection-start-line="389" selection-start-column="4" selection-end-line="389" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -144,8 +146,8 @@
       <find>_point</find>
       <find>DatumPoint</find>
       <find>LineRendererConfig</find>
-      <find>las</find>
       <find>pain</find>
+      <find>las</find>
     </findStrings>
     <replaceStrings>
       <replace>PointRendererElement</replace>
@@ -167,7 +169,6 @@
         <option value="$PROJECT_DIR$/charts_common/lib/src/custom_line_renderer.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/custom_line_renderer_config.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/chart/line/line_renderer.dart" />
-        <option value="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_chart.dart" />
         <option value="$PROJECT_DIR$/charts_flutter/example/lib/simple.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/chart/time_series/custom_time_series_chart.dart" />
@@ -182,6 +183,7 @@
         <option value="$PROJECT_DIR$/charts_flutter/lib/flutter.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" />
+        <option value="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" />
       </list>
     </option>
@@ -340,7 +342,7 @@
       <window_info anchor="bottom" id="Run" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.1910828" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.1910828" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -471,13 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -624,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/comparison_points_decorator.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/line_chart.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -651,27 +639,41 @@
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
-          <caret line="258" column="26" lean-forward="true" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
+          <caret line="258" column="26" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
           <folding>
             <element signature="e#645#691#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/comparison_points_decorator.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2098">
-          <caret line="786" column="37" selection-start-line="786" selection-start-column="37" selection-end-line="786" selection-end-column="37" />
+        <state relative-caret-position="99">
+          <caret line="66" column="4" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
           <folding>
             <element signature="e#645#689#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="168" column="65" selection-start-line="168" selection-start-column="61" selection-end-line="168" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="367" column="21" lean-forward="true" selection-start-line="367" selection-start-column="21" selection-end-line="367" selection-end-column="21" />
+        <state relative-caret-position="507">
+          <caret line="396" column="44" selection-start-line="396" selection-start-column="44" selection-end-line="396" selection-end-column="44" />
         </state>
       </provider>
     </entry>

@@ -67,9 +67,15 @@ class BaseChartState<D> extends State<BaseChart<D>>
     _animationController = new AnimationController(vsync: this)
       ..addListener(_animationTick);
 
+    _animationController.addStatusListener((status) {
+      if (status == AnimationStatus.completed){
+        _animationController.reverse();
+      }
+    });
+
     _animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
       parent: _animationController,
-      curve: Curves.linear
+      curve: Curves.easeInOut
     ));
   }
 

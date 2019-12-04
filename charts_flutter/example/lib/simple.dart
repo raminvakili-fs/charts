@@ -35,7 +35,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
   List<charts.Series<TimeSeriesSales, DateTime>> seriesData2 = List<charts.Series<TimeSeriesSales, DateTime>>();
 
   final dataXY = [
-    TimeSeriesSales(DateTime(2017, 10, 1), 20, 'rect', 10),
+    TimeSeriesSales(DateTime(2017, 10, 1), 20, 'rect1', 0),
   ];
 
   @override
@@ -51,7 +51,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
     dataStream.listen((data) {
       setState(() {
 
-        dataXY.last.radius = 3;
+        dataXY.last.radius = 0;
         dataXY.last.shape = 'circle';
 
         // _lineRendererConfig = null;
@@ -70,7 +70,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
   }
 
   static List<charts.Series<TimeSeriesSales, DateTime>> _createSampleData(List<TimeSeriesSales> data) {
-    List<TimeSeriesSales> data2 = [TimeSeriesSales(data.first.time, data.last.sales,'rect', 10), TimeSeriesSales(data.last.time, data.last.sales,'circle', 10)];
+    List<TimeSeriesSales> data2 = [TimeSeriesSales(data.first.time, data.last.sales,'rect1', 0), TimeSeriesSales(data.last.time, data.last.sales,'rect1', 0)];
 
     return [
       charts.Series<TimeSeriesSales, DateTime>(
@@ -91,7 +91,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
         ..setAttribute(
             charts.pointSymbolRendererFnKey, (int index) => data[index].shape)
       // Default symbol renderer ID for data that have no defined shape.
-        ..setAttribute(charts.pointSymbolRendererIdKey, 'rect'),
+        ..setAttribute(charts.pointSymbolRendererIdKey, 'rect1'),
     ];
   }
 
@@ -105,7 +105,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
 
       _lastValue = Random().nextBool() ? _lastValue + Random().nextInt(5) : _lastValue - Random().nextInt(5);
 
-      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, i % 2 ==0 ? 'circle' : 'rect', 3);
+      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, 'rect1', 0);
     }
   }
 
@@ -149,7 +149,9 @@ int i = 0;
       defaultRenderer: _lineRendererConfig,
 
       behaviors: [
-        charts.PanAndZoomBehavior(),
+        charts.PanAndZoomBehavior(panningCompletedCallback: (){
+
+        }),
         charts.SeriesLegend(position: charts.BehaviorPosition.bottom),
         charts.SlidingViewport(),
         charts.LinePointHighlighter(
