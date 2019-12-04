@@ -43,6 +43,7 @@ export 'package:charts_common/common.dart'
         BarRendererConfig,
         BarTargetLineRenderer,
         BarTargetLineRendererConfig,
+        CustomLineRendererConfig,
         BaseCartesianRenderer,
         BasicNumericTickFormatterSpec,
         BasicNumericTickProviderSpec,

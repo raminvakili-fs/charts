@@ -34,6 +34,7 @@ import '../common/processed_series.dart' show ImmutableSeries, MutableSeries;
 import '../common/series_datum.dart' show SeriesDatum;
 import '../layout/layout_view.dart' show LayoutViewPaintOrder;
 import 'comparison_points_decorator.dart' show ComparisonPointsDecorator;
+import 'point_renderer.dart';
 import 'point_renderer_config.dart' show PointRendererConfig;
 import 'point_renderer_decorator.dart' show PointRendererDecorator;
 
@@ -63,7 +64,7 @@ const defaultSymbolRendererId = '__default__';
 /// This is generally larger than the distance from any datum to the mouse.
 const _maxInitialDistance = 10000.0;
 
-class PointRenderer<D> extends BaseCartesianRenderer<D> {
+class CustomPointRenderer<D> extends BaseCartesianRenderer<D> {
   final PointRendererConfig config;
 
   final List<PointRendererDecorator> pointRendererDecorators;
@@ -84,7 +85,7 @@ class PointRenderer<D> extends BaseCartesianRenderer<D> {
   // data.
   final _currentKeys = <String>[];
 
-  PointRenderer({String rendererId, PointRendererConfig config})
+  CustomPointRenderer({String rendererId, PointRendererConfig config})
       : this.config = config ?? new PointRendererConfig(),
         pointRendererDecorators = config?.pointRendererDecorators ?? [],
         super(
@@ -375,11 +376,13 @@ class PointRenderer<D> extends BaseCartesianRenderer<D> {
         if (point.point.y != null &&
             componentBounds.containsPoint(point.point)) {
 
+          double newRadius = point.radiusPx * animationPercent;
+
           final bounds = new Rectangle<double>(
-              point.point.x - point.radiusPx,
-              point.point.y - point.radiusPx,
-              point.radiusPx * 2,
-              point.radiusPx * 2);
+              point.point.x - newRadius,
+              point.point.y - newRadius,
+              newRadius * 2,
+              newRadius * 2);
 
           if (point.symbolRendererId == defaultSymbolRendererId) {
             symbolRenderer.paint(canvas, bounds,
@@ -648,139 +651,6 @@ class PointRenderer<D> extends BaseCartesianRenderer<D> {
         chartPositionLower: new Point<double>(point.xLower, point.yLower),
         chartPositionUpper: new Point<double>(point.xUpper, point.yUpper),
         symbolRenderer: nearestSymbolRenderer);
-  }
-}
-
-class DatumPoint<D> extends Point<double> {
-  final Object datum;
-  final D domain;
-  final ImmutableSeries<D> series;
-
-  // Coordinates for domain bounds.
-  final double xLower;
-  final double xUpper;
-
-  // Coordinates for measure bounds.
-  final double yLower;
-  final double yUpper;
-
-  DatumPoint(
-      {this.datum,
-      this.domain,
-      this.series,
-      double x,
-      this.xLower,
-      this.xUpper,
-      double y,
-      this.yLower,
-      this.yUpper})
-      : super(x, y);
-
-  factory DatumPoint.from(DatumPoint<D> other,
-      {double x,
-      double xLower,
-      double xUpper,
-      double y,
-      double yLower,
-      double yUpper}) {
-    return new DatumPoint<D>(
-        datum: other.datum,
-        domain: other.domain,
-        series: other.series,
-        x: x ?? other.x,
-        xLower: xLower ?? other.xLower,
-        xUpper: xUpper ?? other.xUpper,
-        y: y ?? other.y,
-        yLower: yLower ?? other.yLower,
-        yUpper: yUpper ?? other.yUpper);
-  }
-}
-
-class PointRendererElement<D> {
-  DatumPoint<D> point;
-  Color color;
-  Color fillColor;
-  double measureAxisPosition;
-  double radiusPx;
-  double boundsLineRadiusPx;
-  double strokeWidthPx;
-  String symbolRendererId;
-
-  PointRendererElement<D> clone() {
-    return new PointRendererElement<D>()
-      ..point = new DatumPoint<D>.from(point)
-      ..color = color != null ? new Color.fromOther(color: color) : null
-      ..fillColor =
-          fillColor != null ? new Color.fromOther(color: fillColor) : null
-      ..measureAxisPosition = measureAxisPosition
-      ..radiusPx = radiusPx
-      ..boundsLineRadiusPx = boundsLineRadiusPx
-      ..strokeWidthPx = strokeWidthPx
-      ..symbolRendererId = symbolRendererId;
-  }
-
-  void updateAnimationPercent(PointRendererElement previous,
-      PointRendererElement target, double animationPercent) {
-    final targetPoint = target.point;
-    final previousPoint = previous.point;
-
-    final x = ((targetPoint.x - previousPoint.x) * animationPercent) +
-        previousPoint.x;
-
-    final xLower = targetPoint.xLower != null && previousPoint.xLower != null
-        ? ((targetPoint.xLower - previousPoint.xLower) * animationPercent) +
-            previousPoint.xLower
-        : null;
-
-    final xUpper = targetPoint.xUpper != null && previousPoint.xUpper != null
-        ? ((targetPoint.xUpper - previousPoint.xUpper) * animationPercent) +
-            previousPoint.xUpper
-        : null;
-
-    double y;
-    if (targetPoint.y != null && previousPoint.y != null) {
-      y = ((targetPoint.y - previousPoint.y) * animationPercent) +
-          previousPoint.y;
-    } else if (targetPoint.y != null) {
-      y = targetPoint.y;
-    } else {
-      y = null;
-    }
-
-    final yLower = targetPoint.yLower != null && previousPoint.yLower != null
-        ? ((targetPoint.yLower - previousPoint.yLower) * animationPercent) +
-            previousPoint.yLower
-        : null;
-
-    final yUpper = targetPoint.yUpper != null && previousPoint.yUpper != null
-        ? ((targetPoint.yUpper - previousPoint.yUpper) * animationPercent) +
-            previousPoint.yUpper
-        : null;
-
-    point = new DatumPoint<D>.from(targetPoint,
-        x: x,
-        xLower: xLower,
-        xUpper: xUpper,
-        y: y,
-        yLower: yLower,
-        yUpper: yUpper);
-
-    color = getAnimatedColor(previous.color, target.color, animationPercent);
-
-    fillColor = getAnimatedColor(
-        previous.fillColor, target.fillColor, animationPercent);
-
-    radiusPx = (((target.radiusPx - previous.radiusPx) * animationPercent) +
-        previous.radiusPx);
-
-    boundsLineRadiusPx =
-        (((target.boundsLineRadiusPx - previous.boundsLineRadiusPx) *
-                animationPercent) +
-            previous.boundsLineRadiusPx);
-
-    strokeWidthPx =
-        (((target.strokeWidthPx - previous.strokeWidthPx) * animationPercent) +
-            previous.strokeWidthPx);
   }
 }
 

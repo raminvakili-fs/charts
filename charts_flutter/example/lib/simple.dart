@@ -20,7 +20,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
 
   bool _finishStream = false;
 
-  charts.LineRendererConfig<DateTime> _lineRendererConfig = charts.LineRendererConfig(
+  charts.CustomLineRendererConfig<DateTime> _lineRendererConfig = charts.CustomLineRendererConfig(
     includeArea: false,
     includeLine: true,
     includePoints: true,

@@ -19,7 +19,8 @@ import '../cartesian/axis/axis.dart' show NumericAxis;
 import '../cartesian/cartesian_chart.dart' show NumericCartesianChart;
 import '../common/series_renderer.dart' show SeriesRenderer;
 import '../layout/layout_config.dart' show LayoutConfig;
-import '../line/line_renderer.dart' show LineRenderer;
+import '../line/custom_line_renderer.dart' show CustomLineRenderer;
+import 'custom_line_renderer.dart';
 
 class LineChart extends NumericCartesianChart {
   LineChart(
@@ -37,7 +38,7 @@ class LineChart extends NumericCartesianChart {
 
   @override
   SeriesRenderer<num> makeDefaultRenderer() {
-    return new LineRenderer<num>()
+    return new CustomLineRenderer<num>()
       ..rendererId = SeriesRenderer.defaultRendererId;
   }
 }

@@ -198,6 +198,7 @@ export 'src/chart/layout/layout_view.dart'
 export 'src/chart/line/line_chart.dart' show LineChart;
 export 'src/chart/line/line_renderer.dart' show LineRenderer;
 export 'src/chart/line/line_renderer_config.dart' show LineRendererConfig;
+export 'src/chart/line/custom_line_renderer_config.dart' show CustomLineRendererConfig;
 export 'src/chart/pie/arc_label_decorator.dart'
     show ArcLabelDecorator, ArcLabelLeaderLineStyleSpec, ArcLabelPosition;
 export 'src/chart/pie/arc_renderer.dart' show ArcRenderer;

@@ -16,6 +16,7 @@
 import 'dart:collection' show LinkedHashMap;
 import 'dart:math' show Rectangle, Point;
 
+import 'package:charts_common/src/chart/scatter_plot/custom_point_renderer.dart';
 import 'package:meta/meta.dart' show required, visibleForTesting;
 
 import '../../../common.dart';
@@ -30,9 +31,8 @@ import '../common/chart_canvas.dart' show ChartCanvas, getAnimatedColor;
 import '../common/datum_details.dart' show DatumDetails;
 import '../common/processed_series.dart' show ImmutableSeries, MutableSeries;
 import '../common/series_datum.dart' show SeriesDatum;
-import '../scatter_plot/point_renderer.dart' show PointRenderer;
 import '../scatter_plot/point_renderer_config.dart' show PointRendererConfig;
-import 'line_renderer_config.dart' show LineRendererConfig;
+import 'custom_line_renderer_config.dart';
 
 const styleSegmentsKey = const AttributeKey<List<_LineRendererElement>>(
     'LineRenderer.styleSegments');
@@ -45,9 +45,9 @@ class CustomLineRenderer<D> extends BaseCartesianRenderer<D> {
   static const drawBoundTopExtensionPx = 5;
   static const drawBoundBottomExtensionPx = 5;
 
-  final LineRendererConfig config;
+  final CustomLineRendererConfig config;
 
-  PointRenderer _pointRenderer;
+  CustomPointRenderer _pointRenderer;
 
   BaseChart<D> _chart;
 
@@ -69,10 +69,10 @@ class CustomLineRenderer<D> extends BaseCartesianRenderer<D> {
   // data.
   final _currentKeys = <String>[];
 
-  factory CustomLineRenderer({String rendererId, LineRendererConfig config}) {
+  factory CustomLineRenderer({String rendererId, CustomLineRendererConfig config}) {
     return new CustomLineRenderer._internal(
         rendererId: rendererId ?? 'line',
-        config: config ?? new LineRendererConfig());
+        config: config ?? new CustomLineRendererConfig());
   }
 
   CustomLineRenderer._internal({String rendererId, this.config})
@@ -80,7 +80,7 @@ class CustomLineRenderer<D> extends BaseCartesianRenderer<D> {
             rendererId: rendererId,
             layoutPaintOrder: config.layoutPaintOrder,
             symbolRenderer: config.symbolRenderer) {
-    _pointRenderer = new PointRenderer<D>(
+    _pointRenderer = new CustomPointRenderer<D>(
         config: new PointRendererConfig<D>(radiusPx: this.config.radiusPx, customSymbolRenderers: {
           'circle': new CircleSymbolRenderer(),
           'rect': new RectSymbolRenderer(),
