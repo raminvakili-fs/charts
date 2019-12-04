@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05257497-89a9-4af2-a7a7-9d2a1a04f78c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/charts_flutter/example/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/charts_flutter/example/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/charts_flutter/example/lib/simple.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_flutter/example/lib/simple.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" afterDir="false" />
@@ -18,20 +19,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="396" column="44" selection-start-line="396" selection-start-column="44" selection-end-line="396" selection-end-column="44" />
+            <state relative-caret-position="526">
+              <caret line="396" column="63" selection-start-line="396" selection-start-column="63" selection-end-line="396" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="168" column="65" selection-start-line="168" selection-start-column="61" selection-end-line="168" selection-end-column="65" />
+            <state relative-caret-position="397">
+              <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -46,10 +47,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/symbol_renderer.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="52" selection-start-line="15" selection-start-column="7" selection-end-line="20" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#3682#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="99">
-              <caret line="66" column="4" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
               <folding>
                 <element signature="e#645#689#0" expanded="true" />
               </folding>
@@ -90,10 +103,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="258" column="26" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
+            <state relative-caret-position="876">
+              <caret line="313" column="26" selection-start-line="313" selection-start-column="26" selection-end-line="313" selection-end-column="26" />
               <folding>
                 <element signature="e#645#691#0" expanded="true" />
+                <element signature="e#7593#8641#0" />
               </folding>
             </state>
           </provider>
@@ -104,15 +118,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
               <caret line="39" column="30" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/charts_flutter/lib/flutter.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -183,8 +188,8 @@
         <option value="$PROJECT_DIR$/charts_flutter/lib/flutter.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" />
-        <option value="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" />
         <option value="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" />
+        <option value="$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart" />
       </list>
     </option>
   </component>
@@ -330,7 +335,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16186556" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28395063" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -342,7 +347,7 @@
       <window_info anchor="bottom" id="Run" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.1910828" />
+      <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.1910828" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -442,16 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="120" column="13" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/symbol_renderer.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="20" column="52" selection-start-line="15" selection-start-column="7" selection-end-line="20" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#3682#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -636,16 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="258" column="26" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
-          <folding>
-            <element signature="e#645#691#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/comparison_points_decorator.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -656,24 +641,45 @@
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
-          <caret line="66" column="4" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
           <folding>
             <element signature="e#645#689#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart">
+    <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/symbol_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="168" column="65" selection-start-line="168" selection-start-column="61" selection-end-line="168" selection-end-column="65" />
+        <state relative-caret-position="255">
+          <caret line="20" column="52" selection-start-line="15" selection-start-column="7" selection-end-line="20" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#3682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="876">
+          <caret line="313" column="26" selection-start-line="313" selection-start-column="26" selection-end-line="313" selection-end-column="26" />
+          <folding>
+            <element signature="e#645#691#0" expanded="true" />
+            <element signature="e#7593#8641#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="396" column="44" selection-start-line="396" selection-start-column="44" selection-end-line="396" selection-end-column="44" />
+        <state relative-caret-position="526">
+          <caret line="396" column="63" selection-start-line="396" selection-start-column="63" selection-end-line="396" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/base_chart_state.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
         </state>
       </provider>
     </entry>

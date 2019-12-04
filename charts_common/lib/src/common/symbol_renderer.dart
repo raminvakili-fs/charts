@@ -270,8 +270,6 @@ class RippleSymbolRenderer extends SymbolRenderer {
     canvas.drawPoint(point: center, radius: radius * 2, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 60), strokeWidthPx: 1);
     canvas.drawPoint(point: center, radius: radius * 2.5, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 30), strokeWidthPx: 1);
 
-    //TODO paint some custom rect for Flags
-
   }
 
 
@@ -283,6 +281,43 @@ class RippleSymbolRenderer extends SymbolRenderer {
   @override
   bool operator ==(Object other) =>
       other is RippleSymbolRenderer && super == (other);
+
+  @override
+  int get hashCode {
+    int hashcode = super.hashCode;
+    hashcode = (hashcode * 37) + runtimeType.hashCode;
+    return hashcode;
+  }
+}
+
+class FlagSymbolRenderer extends SymbolRenderer {
+  FlagSymbolRenderer({bool isSolid = true}) : super(isSolid: isSolid);
+
+  @override
+  void paint(ChartCanvas canvas, Rectangle<num> bounds,
+      {List<int> dashPattern,
+        Color fillColor,
+        Color strokeColor,
+        double strokeWidthPx}) {
+    final center = new Point(
+      bounds.left + (bounds.width / 2),
+      bounds.top + (bounds.height / 2),
+    );
+    final radius = min(bounds.width, bounds.height) / 2;
+
+    canvas.drawPoint(point: center, radius: radius/2, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 255), strokeWidthPx: 1);
+
+  }
+
+
+  @override
+  bool shouldRepaint(FlagSymbolRenderer oldRenderer) {
+    return this != oldRenderer;
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      other is FlagSymbolRenderer && super == (other);
 
   @override
   int get hashCode {

@@ -144,7 +144,7 @@ int i = 0;
     return charts.CustomTimeSeriesChart(
       seriesData,
       animate: true,
-      animationDuration: Duration(milliseconds: 500),
+      animationDuration: Duration(milliseconds: 1000),
       // domainAxis: charts.EndPointsTimeAxisSpec(),
       defaultRenderer: _lineRendererConfig,
 

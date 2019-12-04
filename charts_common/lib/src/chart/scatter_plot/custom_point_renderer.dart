@@ -373,7 +373,11 @@ class CustomPointRenderer<D> extends BaseCartesianRenderer<D> {
         if (point.point.y != null &&
             componentBounds.containsPoint(point.point)) {
 
-          double newRadius = point.radiusPx * (config.customSymbolRenderers.containsKey(point.symbolRendererId) ? animationPercent : 1);
+          double newRadius = point.radiusPx * animationPercent;
+
+          if (animationPercent > 0.99) {
+            newRadius = 0;
+          }
 
           final bounds = new Rectangle<double>(
               point.point.x - newRadius,
