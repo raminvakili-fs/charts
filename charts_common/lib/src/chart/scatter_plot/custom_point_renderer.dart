@@ -358,12 +358,6 @@ class CustomPointRenderer<D> extends BaseCartesianRenderer<D> {
       points
           .map<PointRendererElement<D>>((AnimatedPoint<D> animatingPoint) {
               final pointElement = animatingPoint.getCurrentPoint(animationPercent);
-
-              if (animatingPoint == points.last || animatingPoint == points.first) {
-                pointElement.fillColor = Color.transparent;
-                pointElement.color = Color.transparent;
-              }
-
               return pointElement;
             })
           .forEach((PointRendererElement point) {pointRendererDecorators

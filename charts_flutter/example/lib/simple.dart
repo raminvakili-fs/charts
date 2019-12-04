@@ -50,7 +50,14 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
 
     dataStream.listen((data) {
       setState(() {
+
+        dataXY.last.radius = 3;
+        dataXY.last.shape = 'circle';
+
         // _lineRendererConfig = null;
+        data.radius = 10;
+        data.shape = 'ripple';
+
         dataXY.add(data);
 
         if (!_pause) {
@@ -98,7 +105,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
 
       _lastValue = Random().nextBool() ? _lastValue + Random().nextInt(5) : _lastValue - Random().nextInt(5);
 
-      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, i % 2 ==0 ?'circle' : 'rect', 10);
+      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, i % 2 ==0 ? 'circle' : 'rect', 3);
     }
   }
 
@@ -170,8 +177,8 @@ int i = 0;
 class TimeSeriesSales {
   final DateTime time;
   final int sales;
-  final String shape;
-  final double radius;
+  String shape;
+  double radius;
 
   TimeSeriesSales(this.time, this.sales, this.shape, this.radius);
 }

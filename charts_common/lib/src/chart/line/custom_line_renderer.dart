@@ -17,6 +17,7 @@ import 'dart:collection' show LinkedHashMap;
 import 'dart:math' show Rectangle, Point;
 
 import 'package:charts_common/src/chart/scatter_plot/custom_point_renderer.dart';
+import 'package:charts_common/src/common/symbol_renderer.dart';
 import 'package:meta/meta.dart' show required, visibleForTesting;
 
 import '../../../common.dart';
@@ -84,6 +85,7 @@ class CustomLineRenderer<D> extends BaseCartesianRenderer<D> {
         config: new PointRendererConfig<D>(radiusPx: this.config.radiusPx, customSymbolRenderers: {
           'circle': new CircleSymbolRenderer(),
           'rect': new RectSymbolRenderer(),
+          'ripple': new RippleSymbolRenderer(),
         }));
 
   }

@@ -249,6 +249,50 @@ class CircleSymbolRenderer extends SymbolRenderer {
   }
 }
 
+class RippleSymbolRenderer extends SymbolRenderer {
+  RippleSymbolRenderer({bool isSolid = true}) : super(isSolid: isSolid);
+
+  @override
+  void paint(ChartCanvas canvas, Rectangle<num> bounds,
+      {List<int> dashPattern,
+        Color fillColor,
+        Color strokeColor,
+        double strokeWidthPx}) {
+    final center = new Point(
+      bounds.left + (bounds.width / 2),
+      bounds.top + (bounds.height / 2),
+    );
+    final radius = min(bounds.width, bounds.height) / 2;
+
+    canvas.drawPoint(
+        point: center,
+        radius: radius,
+        fill: getSolidFillColor(fillColor),
+        stroke: strokeColor,
+        strokeWidthPx: getSolidStrokeWidthPx(strokeWidthPx));
+
+    //TODO paint some custom rect for Flags
+
+  }
+
+
+  @override
+  bool shouldRepaint(RippleSymbolRenderer oldRenderer) {
+    return this != oldRenderer;
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      other is RippleSymbolRenderer && super == (other);
+
+  @override
+  int get hashCode {
+    int hashcode = super.hashCode;
+    hashcode = (hashcode * 37) + runtimeType.hashCode;
+    return hashcode;
+  }
+}
+
 /// Rectangle symbol renderer.
 class RectSymbolRenderer extends SymbolRenderer {
   RectSymbolRenderer({bool isSolid = true}) : super(isSolid: isSolid);
