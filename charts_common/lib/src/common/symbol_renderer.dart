@@ -264,12 +264,11 @@ class RippleSymbolRenderer extends SymbolRenderer {
     );
     final radius = min(bounds.width, bounds.height) / 2;
 
-    canvas.drawPoint(
-        point: center,
-        radius: radius,
-        fill: getSolidFillColor(fillColor),
-        stroke: strokeColor,
-        strokeWidthPx: getSolidStrokeWidthPx(strokeWidthPx));
+    canvas.drawPoint(point: center, radius: radius/2, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 255), strokeWidthPx: 1);
+    canvas.drawPoint(point: center, radius: radius, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 150), strokeWidthPx: 1);
+    canvas.drawPoint(point: center, radius: radius * 1.5, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 100), strokeWidthPx: 1);
+    canvas.drawPoint(point: center, radius: radius * 2, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 60), strokeWidthPx: 1);
+    canvas.drawPoint(point: center, radius: radius * 2.5, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 30), strokeWidthPx: 1);
 
     //TODO paint some custom rect for Flags
 

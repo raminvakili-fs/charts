@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05257497-89a9-4af2-a7a7-9d2a1a04f78c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/charts_flutter/example/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/charts_flutter/example/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="362" column="26" lean-forward="true" selection-start-line="362" selection-start-column="26" selection-end-line="362" selection-end-column="26" />
+            <state relative-caret-position="367">
+              <caret line="367" column="21" lean-forward="true" selection-start-line="367" selection-start-column="21" selection-end-line="367" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -37,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1594">
-              <caret line="786" column="37" lean-forward="true" selection-start-line="786" selection-start-column="37" selection-end-line="786" selection-end-column="37" />
+            <state relative-caret-position="2098">
+              <caret line="786" column="37" selection-start-line="786" selection-start-column="37" selection-end-line="786" selection-end-column="37" />
               <folding>
                 <element signature="e#645#689#0" expanded="true" />
               </folding>
@@ -61,8 +61,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/common.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-445">
+            <state relative-caret-position="-362">
               <caret line="202" column="69" selection-start-line="202" selection-start-column="69" selection-end-line="202" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/common/chart_canvas.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -70,11 +79,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="255" column="34" selection-start-line="255" selection-start-column="34" selection-end-line="255" selection-end-column="34" />
+            <state relative-caret-position="534">
+              <caret line="258" column="26" lean-forward="true" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
               <folding>
                 <element signature="e#645#691#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/color.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="39" column="30" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -122,12 +140,12 @@
       <find>seriesPointMap</find>
       <find>CustomPointRendererElement</find>
       <find>PointRenderer</find>
-      <find>LineRendererConfig</find>
       <find>LineRendere</find>
       <find>_point</find>
       <find>DatumPoint</find>
-      <find>pain</find>
+      <find>LineRendererConfig</find>
       <find>las</find>
+      <find>pain</find>
     </findStrings>
     <replaceStrings>
       <replace>PointRendererElement</replace>
@@ -310,7 +328,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2510288" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16186556" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -435,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/common/chart_canvas.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/charts_flutter/lib/src/chart_canvas.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5134">
@@ -560,16 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/line_chart.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-          <folding>
-            <element signature="e#645#689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/common/series_renderer_config.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -595,44 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/common.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-445">
-          <caret line="202" column="69" selection-start-line="202" selection-start-column="69" selection-end-line="202" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/charts_flutter/lib/flutter.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="255" column="34" selection-start-line="255" selection-start-column="34" selection-end-line="255" selection-end-column="34" />
-          <folding>
-            <element signature="e#645#691#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1594">
-          <caret line="786" column="37" lean-forward="true" selection-start-line="786" selection-start-column="37" selection-end-line="786" selection-end-column="37" />
-          <folding>
-            <element signature="e#645#689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/comparison_points_decorator.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -643,10 +610,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/common.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362">
+          <caret line="202" column="69" selection-start-line="202" selection-start-column="69" selection-end-line="202" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/common/chart_canvas.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/comparison_points_decorator.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/line_chart.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+          <folding>
+            <element signature="e#645#689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/color.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/common/symbol_renderer.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="258" column="26" lean-forward="true" selection-start-line="258" selection-start-column="26" selection-end-line="258" selection-end-column="26" />
+          <folding>
+            <element signature="e#645#691#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/line/custom_line_renderer.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2098">
+          <caret line="786" column="37" selection-start-line="786" selection-start-column="37" selection-end-line="786" selection-end-column="37" />
+          <folding>
+            <element signature="e#645#689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="362" column="26" lean-forward="true" selection-start-line="362" selection-start-column="26" selection-end-line="362" selection-end-column="26" />
+        <state relative-caret-position="367">
+          <caret line="367" column="21" lean-forward="true" selection-start-line="367" selection-start-column="21" selection-end-line="367" selection-end-column="21" />
         </state>
       </provider>
     </entry>
