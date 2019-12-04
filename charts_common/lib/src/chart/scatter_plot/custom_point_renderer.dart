@@ -357,12 +357,15 @@ class CustomPointRenderer<D> extends BaseCartesianRenderer<D> {
     seriesPointMap.forEach((String key, List<AnimatedPoint<D>> points) {
       points
           .map<PointRendererElement<D>>((AnimatedPoint<D> animatingPoint) {
-              final pointElement = animatingPoint.getCurrentPoint(animationPercent);
+              final pointElement = animatingPoint.getCurrentPoint(animatingPoint == points.last ? 1 : animationPercent);
               return pointElement;
             })
-          .forEach((PointRendererElement point) {pointRendererDecorators
-          .where((PointRendererDecorator decorator) => !decorator.renderAbove)
-          .forEach((PointRendererDecorator decorator) {decorator.decorate(point, canvas, graphicsFactory, drawBounds: componentBounds, animationPercent: animationPercent, rtl: isRtl);});
+              .forEach((PointRendererElement point) {
+                  pointRendererDecorators.where((PointRendererDecorator decorator) {
+                      return !decorator.renderAbove;
+                  }).forEach((PointRendererDecorator decorator) {
+                    decorator.decorate(point, canvas, graphicsFactory, drawBounds: componentBounds, animationPercent: animationPercent, rtl: isRtl);
+                  });
 
         // Skip points whose center lies outside the draw bounds. Those that lie
         // near the edge will be allowed to render partially outside. This
