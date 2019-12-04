@@ -35,7 +35,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
   List<charts.Series<TimeSeriesSales, DateTime>> seriesData2 = List<charts.Series<TimeSeriesSales, DateTime>>();
 
   final dataXY = [
-    TimeSeriesSales(DateTime(2017, 10, 1), 20, 'rect1', 0),
+    TimeSeriesSales(DateTime(2017, 10, 1), 20, 'rect1', 0, false),
   ];
 
   @override
@@ -44,6 +44,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
     _finishStream = true;
   }
 
+
   @override
   void initState() {
     dataStream = createDataTimesStream();
@@ -51,10 +52,9 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
     dataStream.listen((data) {
       setState(() {
 
+        dataXY.last.shape = dataXY.last.isFlag ? 'flag' : 'circle';
         dataXY.last.radius = 0;
-        dataXY.last.shape = 'circle';
 
-        // _lineRendererConfig = null;
         data.radius = 10;
         data.shape = 'ripple';
 
@@ -70,7 +70,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
   }
 
   static List<charts.Series<TimeSeriesSales, DateTime>> _createSampleData(List<TimeSeriesSales> data) {
-    List<TimeSeriesSales> data2 = [TimeSeriesSales(data.first.time, data.last.sales,'rect1', 0), TimeSeriesSales(data.last.time, data.last.sales,'rect1', 0)];
+    List<TimeSeriesSales> data2 = [TimeSeriesSales(data.first.time, data.last.sales,'rect', 0, false), TimeSeriesSales(data.last.time, data.last.sales,'rect', 0, false)];
 
     return [
       charts.Series<TimeSeriesSales, DateTime>(
@@ -91,7 +91,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
         ..setAttribute(
             charts.pointSymbolRendererFnKey, (int index) => data[index].shape)
       // Default symbol renderer ID for data that have no defined shape.
-        ..setAttribute(charts.pointSymbolRendererIdKey, 'rect1'),
+        ..setAttribute(charts.pointSymbolRendererIdKey, 'rect'),
     ];
   }
 
@@ -99,13 +99,16 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
     while (true) {
       await Future.delayed(Duration(seconds: 2));
 
+      i++;
+
       if (_finishStream){
         break;
       }
 
       _lastValue = Random().nextBool() ? _lastValue + Random().nextInt(5) : _lastValue - Random().nextInt(5);
 
-      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, 'rect1', 0);
+
+      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, (i % 5 == 0) ? 'flag' : 'rect', 0, (i % 5 == 0));
     }
   }
 
@@ -182,5 +185,7 @@ class TimeSeriesSales {
   String shape;
   double radius;
 
-  TimeSeriesSales(this.time, this.sales, this.shape, this.radius);
+  final bool isFlag;
+
+  TimeSeriesSales(this.time, this.sales, this.shape, this.radius, this.isFlag);
 }

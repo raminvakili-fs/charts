@@ -303,9 +303,15 @@ class FlagSymbolRenderer extends SymbolRenderer {
       bounds.left + (bounds.width / 2),
       bounds.top + (bounds.height / 2),
     );
-    final radius = min(bounds.width, bounds.height) / 2;
 
-    canvas.drawPoint(point: center, radius: radius/2, fill: Color.transparent, stroke: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 255), strokeWidthPx: 1);
+
+
+    final bl = Point(center.x -2, center.y);
+    final tl = Point(center.x -2, center.y - 10);
+    final tr = Point(center.x +2, center.y - 10);
+    final br = Point(center.x +2, center.y);
+
+    canvas.drawPolygon(points: [bl, tl, tr, br], fill: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 255));
 
   }
 

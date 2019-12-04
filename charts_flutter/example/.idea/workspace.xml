@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c01d36f4-d944-4f9c-b669-efdd751d8358" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../charts_common/lib/src/chart/line/custom_line_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../charts_common/lib/src/chart/line/custom_line_renderer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../charts_common/lib/src/common/symbol_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../charts_common/lib/src/common/symbol_renderer.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/simple.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/simple.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/src/base_chart_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/src/base_chart_state.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/simple.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
+            <state relative-caret-position="134">
+              <caret line="55" column="31" lean-forward="true" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -93,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/../../charts_common/lib/src/chart/line/custom_line_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="997" column="6" selection-start-line="997" selection-start-column="6" selection-end-line="997" selection-end-column="6" />
+              <caret line="998" column="6" selection-start-line="998" selection-start-column="6" selection-end-line="998" selection-end-column="6" />
               <folding>
                 <element signature="e#0#56879#0" expanded="true" />
                 <element signature="e#645#689#0" expanded="true" />
@@ -258,7 +257,7 @@
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32907802" />
       <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.498779" visible="true" weight="0.3487242" />
       <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5382746" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3705954" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.2673147" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5007153" side_tool="true" weight="0.22411348" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" sideWeight="0.501221" side_tool="true" weight="0.43742406" />
@@ -305,6 +304,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/simple.dart</url>
+          <line>54</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
@@ -501,7 +511,7 @@
     <entry file="file://$PROJECT_DIR$/../../charts_common/lib/src/chart/line/custom_line_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="997" column="6" selection-start-line="997" selection-start-column="6" selection-end-line="997" selection-end-column="6" />
+          <caret line="998" column="6" selection-start-line="998" selection-start-column="6" selection-end-line="998" selection-end-column="6" />
           <folding>
             <element signature="e#0#56879#0" expanded="true" />
             <element signature="e#645#689#0" expanded="true" />
@@ -558,8 +568,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/simple.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
+        <state relative-caret-position="134">
+          <caret line="55" column="31" lean-forward="true" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

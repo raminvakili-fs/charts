@@ -86,6 +86,7 @@ class CustomLineRenderer<D> extends BaseCartesianRenderer<D> {
           'circle': new CircleSymbolRenderer(),
           'rect': new RectSymbolRenderer(),
           'ripple': new RippleSymbolRenderer(),
+          'flag': new FlagSymbolRenderer(),
         }));
 
   }
