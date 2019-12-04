@@ -35,7 +35,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
   List<charts.Series<TimeSeriesSales, DateTime>> seriesData2 = List<charts.Series<TimeSeriesSales, DateTime>>();
 
   final dataXY = [
-    TimeSeriesSales(DateTime(2017, 10, 1), 20, 'rect'),
+    TimeSeriesSales(DateTime(2017, 10, 1), 20, 'rect', 10),
   ];
 
   @override
@@ -63,7 +63,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
   }
 
   static List<charts.Series<TimeSeriesSales, DateTime>> _createSampleData(List<TimeSeriesSales> data) {
-    List<TimeSeriesSales> data2 = [TimeSeriesSales(data.first.time, data.last.sales,'rect'), TimeSeriesSales(data.last.time, data.last.sales,'circle')];
+    List<TimeSeriesSales> data2 = [TimeSeriesSales(data.first.time, data.last.sales,'rect', 10), TimeSeriesSales(data.last.time, data.last.sales,'circle', 10)];
 
     return [
       charts.Series<TimeSeriesSales, DateTime>(
@@ -78,6 +78,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
         colorFn: (_, __) => charts.MaterialPalette.black,
         domainFn: (TimeSeriesSales sales, _) => sales.time,
         measureFn: (TimeSeriesSales sales, _) => sales.sales,
+        radiusPxFn: (TimeSeriesSales sales, _) => sales.radius,
         data: data,
       )// Accessor function that associates each datum with a symbol renderer.
         ..setAttribute(
@@ -97,7 +98,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
 
       _lastValue = Random().nextBool() ? _lastValue + Random().nextInt(5) : _lastValue - Random().nextInt(5);
 
-      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, i % 2 ==0 ?'circle' : 'rect');
+      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, i % 2 ==0 ?'circle' : 'rect', 10);
     }
   }
 
@@ -132,8 +133,8 @@ int i = 0;
     );
   }
 
-  charts.TimeSeriesChart buildTimeSeriesChart() {
-    return charts.TimeSeriesChart(
+  charts.CustomTimeSeriesChart buildTimeSeriesChart() {
+    return charts.CustomTimeSeriesChart(
       seriesData,
       animate: true,
       animationDuration: Duration(milliseconds: 500),
@@ -170,6 +171,7 @@ class TimeSeriesSales {
   final DateTime time;
   final int sales;
   final String shape;
+  final double radius;
 
-  TimeSeriesSales(this.time, this.sales, this.shape);
+  TimeSeriesSales(this.time, this.sales, this.shape, this.radius);
 }

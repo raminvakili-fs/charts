@@ -15,6 +15,8 @@
 
 import 'dart:collection' show LinkedHashMap;
 
+import 'package:charts_common/src/chart/line/custom_line_renderer.dart';
+
 import '../../common/date_time_factory.dart'
     show DateTimeFactory, LocalDateTimeFactory;
 import '../cartesian/axis/axis.dart' show Axis, NumericAxis;
@@ -63,3 +65,28 @@ class TimeSeriesChart extends CartesianChart<DateTime> {
     return (axisSpec as DateTimeAxisSpec).createDateTimeAxis(dateTimeFactory);
   }
 }
+
+class CustomTimeSeriesChart extends TimeSeriesChart {
+
+  CustomTimeSeriesChart(
+      {bool vertical,
+        LayoutConfig layoutConfig,
+        NumericAxis primaryMeasureAxis,
+        NumericAxis secondaryMeasureAxis,
+        LinkedHashMap<String, NumericAxis> disjointMeasureAxes})
+      : super(
+      vertical: vertical,
+      layoutConfig: layoutConfig,
+      primaryMeasureAxis: primaryMeasureAxis,
+      secondaryMeasureAxis: secondaryMeasureAxis,
+      disjointMeasureAxes: disjointMeasureAxes);
+
+
+  @override
+  SeriesRenderer<DateTime> makeDefaultRenderer() {
+    return new CustomLineRenderer<DateTime>()
+      ..rendererId = SeriesRenderer.defaultRendererId;
+  }
+
+}
+

@@ -69,7 +69,7 @@ class BaseChartState<D> extends State<BaseChart<D>>
 
     _animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
       parent: _animationController,
-      curve: Curves.elasticOut
+      curve: Curves.linear
     ));
   }
 

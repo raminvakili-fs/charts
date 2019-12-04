@@ -22,6 +22,7 @@ import 'package:charts_common/common.dart' as common
         NumericAxisSpec,
         Series,
         SeriesRendererConfig,
+        CustomTimeSeriesChart,
         TimeSeriesChart;
 import 'behaviors/chart_behavior.dart' show ChartBehavior;
 import 'behaviors/line_point_highlighter.dart' show LinePointHighlighter;
@@ -91,4 +92,60 @@ class TimeSeriesChart extends CartesianChart<DateTime> {
 
     behaviors.add(new LinePointHighlighter());
   }
+}
+
+
+class CustomTimeSeriesChart extends TimeSeriesChart {
+  /// Create a [TimeSeriesChart].
+  ///
+  /// [dateTimeFactory] allows specifying a factory that creates [DateTime] to
+  /// be used for the time axis. If none specified, local date time is used.
+  CustomTimeSeriesChart(
+      List<common.Series<dynamic, DateTime>> seriesList, {
+        bool animate,
+        Duration animationDuration,
+        common.AxisSpec domainAxis,
+        common.AxisSpec primaryMeasureAxis,
+        common.AxisSpec secondaryMeasureAxis,
+        LinkedHashMap<String, common.NumericAxisSpec> disjointMeasureAxes,
+        common.SeriesRendererConfig<DateTime> defaultRenderer,
+        List<common.SeriesRendererConfig<DateTime>> customSeriesRenderers,
+        List<ChartBehavior> behaviors,
+        List<SelectionModelConfig<DateTime>> selectionModels,
+        LayoutConfig layoutConfig,
+        common.DateTimeFactory dateTimeFactory,
+        bool defaultInteractions = true,
+        bool flipVerticalAxis,
+        UserManagedState<DateTime> userManagedState,
+      }) : super(
+    seriesList,
+    animate: animate,
+    animationDuration: animationDuration,
+    domainAxis: domainAxis,
+    dateTimeFactory: dateTimeFactory,
+    primaryMeasureAxis: primaryMeasureAxis,
+    secondaryMeasureAxis: secondaryMeasureAxis,
+    disjointMeasureAxes: disjointMeasureAxes,
+    defaultRenderer: defaultRenderer,
+    customSeriesRenderers: customSeriesRenderers,
+    behaviors: behaviors,
+    selectionModels: selectionModels,
+    layoutConfig: layoutConfig,
+    defaultInteractions: defaultInteractions,
+    flipVerticalAxis: flipVerticalAxis,
+    userManagedState: userManagedState,
+  );
+
+  @override
+  common.TimeSeriesChart createCommonChart(BaseChartState chartState) {
+    // Optionally create primary and secondary measure axes if the chart was
+    // configured with them. If no axes were configured, then the chart will
+    // use its default types (usually a numeric axis).
+    return new common.CustomTimeSeriesChart(
+        layoutConfig: layoutConfig?.commonLayoutConfig,
+        primaryMeasureAxis: primaryMeasureAxis?.createAxis(),
+        secondaryMeasureAxis: secondaryMeasureAxis?.createAxis(),
+        disjointMeasureAxes: createDisjointMeasureAxes());
+  }
+
 }

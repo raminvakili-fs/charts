@@ -221,7 +221,7 @@ export 'src/chart/scatter_plot/symbol_annotation_renderer.dart'
     show SymbolAnnotationRenderer;
 export 'src/chart/scatter_plot/symbol_annotation_renderer_config.dart'
     show SymbolAnnotationRendererConfig;
-export 'src/chart/time_series/time_series_chart.dart' show TimeSeriesChart;
+export 'src/chart/time_series/time_series_chart.dart' show TimeSeriesChart, CustomTimeSeriesChart;
 export 'src/chart/treemap/squarified_treemap_renderer.dart'
     show SquarifiedTreeMapRenderer;
 export 'src/chart/treemap/treemap_chart.dart' show TreeMapChart;
