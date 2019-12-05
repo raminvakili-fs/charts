@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c01d36f4-d944-4f9c-b669-efdd751d8358" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../charts_common/lib/src/common/symbol_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../charts_common/lib/src/common/symbol_renderer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/simple.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/simple.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-75">
-              <caret line="301" column="26" selection-start-line="301" selection-start-column="14" selection-end-line="301" selection-end-column="26" />
+              <caret line="309" column="26" selection-start-line="309" selection-start-column="14" selection-end-line="309" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -170,8 +169,8 @@
         <option value="$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/point_renderer.dart" />
         <option value="$PROJECT_DIR$/../../charts_common/lib/src/chart/line/line_renderer_config.dart" />
         <option value="$PROJECT_DIR$/../../charts_common/lib/src/chart/line/custom_line_renderer.dart" />
-        <option value="$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" />
         <option value="$PROJECT_DIR$/lib/simple.dart" />
+        <option value="$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart" />
       </list>
     </option>
   </component>
@@ -250,7 +249,7 @@
     <frame x="0" y="23" width="1680" height="938" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.0989011" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22527473" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -258,11 +257,11 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.77228326" weight="0.36452004" />
+      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.77228326" visible="true" weight="0.36452004" />
       <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" visible="true" weight="0.3705954" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.30984205" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.2673147" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50061053" side_tool="true" visible="true" weight="0.3705954" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50061053" side_tool="true" weight="0.1980559" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" sideWeight="0.22710623" side_tool="true" weight="0.3487242" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
@@ -313,7 +312,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart</url>
-          <line>400</line>
+          <line>408</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -571,7 +570,7 @@
     <entry file="file://$PROJECT_DIR$/../../charts_common/lib/src/chart/scatter_plot/custom_point_renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-75">
-          <caret line="301" column="26" selection-start-line="301" selection-start-column="14" selection-end-line="301" selection-end-column="26" />
+          <caret line="309" column="26" selection-start-line="309" selection-start-column="14" selection-end-line="309" selection-end-column="26" />
         </state>
       </provider>
     </entry>
