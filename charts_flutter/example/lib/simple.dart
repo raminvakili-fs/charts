@@ -70,7 +70,12 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
   }
 
   static List<charts.Series<TimeSeriesSales, DateTime>> _createSampleData(List<TimeSeriesSales> data) {
-    List<TimeSeriesSales> data2 = [TimeSeriesSales(data.first.time, data.last.sales,'rect', 0, false), TimeSeriesSales(data.last.time, data.last.sales,'rect', 0, false)];
+    List<TimeSeriesSales> barrierData = [TimeSeriesSales(data.first.time, data.last.sales,'rect', 0, false), TimeSeriesSales(data.last.time, data.last.sales,'rect', 0, false)];
+    List<TimeSeriesSales> lastTickPoint = [];
+
+    final lastPoint = data.last;
+
+    lastTickPoint.add(TimeSeriesSales(lastPoint.time, lastPoint.sales, 'ripple', 10, false));
 
     return [
       charts.Series<TimeSeriesSales, DateTime>(
@@ -78,7 +83,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
         colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
         domainFn: (TimeSeriesSales sales, _) => sales.time,
         measureFn: (TimeSeriesSales sales, _) => sales.sales,
-        data: data2,
+        data: barrierData,
       ),
       charts.Series<TimeSeriesSales, DateTime>(
         id: 'Sample Data',
@@ -92,6 +97,20 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
             charts.pointSymbolRendererFnKey, (int index) => data[index].shape)
       // Default symbol renderer ID for data that have no defined shape.
         ..setAttribute(charts.pointSymbolRendererIdKey, 'rect'),
+
+      charts.Series<TimeSeriesSales, DateTime>(
+        id: 'tick',
+        domainFn: (TimeSeriesSales sales, _) => sales.time,
+        fillColorFn: (TimeSeriesSales sales, _) => sales.color,
+        colorFn: (TimeSeriesSales sales, _) => sales.color,
+        measureFn: (TimeSeriesSales sales, _) => sales.sales,
+        radiusPxFn: (TimeSeriesSales sales, _) => sales.radius,
+        data: lastTickPoint,
+      )// Accessor function that associates each datum with a symbol renderer.
+        ..setAttribute(
+            charts.pointSymbolRendererFnKey, (int index) => lastTickPoint[index].shape)
+      // Default symbol renderer ID for data that have no defined shape.
+        ..setAttribute(charts.pointSymbolRendererIdKey, 'ripple'),
     ];
   }
 
@@ -108,7 +127,7 @@ class _SimpleLineChartState extends State<SimpleLineChart> {
       _lastValue = Random().nextBool() ? _lastValue + Random().nextInt(5) : _lastValue - Random().nextInt(5);
 
 
-      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, (i % 5 == 0) ? 'flag' : 'rect', 0, (i % 5 == 0));
+      yield TimeSeriesSales(DateTime(2017, 10, ++_lastY), _lastValue, (i % 5 == 0) ? 'flag' : 'rect', 0, (i % 5 == 0), color: (i % 5 == 0) ? charts.Color.fromHex(code: '#4545454545') : charts.Color.fromHex(code: '888888AA'));
     }
   }
 
@@ -184,8 +203,9 @@ class TimeSeriesSales {
   final int sales;
   String shape;
   double radius;
+  Color color;
 
   final bool isFlag;
 
-  TimeSeriesSales(this.time, this.sales, this.shape, this.radius, this.isFlag);
+  TimeSeriesSales(this.time, this.sales, this.shape, this.radius, this.isFlag, {this.color = Color.black});
 }

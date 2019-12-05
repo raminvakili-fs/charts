@@ -306,12 +306,14 @@ class FlagSymbolRenderer extends SymbolRenderer {
 
 
 
-    final bl = Point(center.x -2, center.y);
-    final tl = Point(center.x -2, center.y - 10);
-    final tr = Point(center.x +2, center.y - 10);
-    final br = Point(center.x +2, center.y);
+    final bl = Point(center.x - 1, center.y);
+    final tl = Point(center.x - 1, center.y - 14);
+    final tr1 = Point(center.x + 1, center.y - 14);
+    final tr2 = Point(center.x + 5, center.y - 10);
+    final tr3 = Point(center.x + 1, center.y - 8);
+    final br = Point(center.x + 1, center.y);
 
-    canvas.drawPolygon(points: [bl, tl, tr, br], fill: Color(r: strokeColor.a, g: strokeColor.g, b: strokeColor.b, a: 255));
+    canvas.drawPolygon(points: [bl, tl, tr1, tr2, tr3, br], fill: Color(r: fillColor.a, g: fillColor.g, b: fillColor.b, a: 255));
 
   }
 
